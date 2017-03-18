@@ -1,0 +1,12 @@
+target/
+bin/
+logs/
+*.log
+
+# IDEA-specific
+*.iml
+.idea/
+
+pom.xml.*
+release.properties
+*.NavData
