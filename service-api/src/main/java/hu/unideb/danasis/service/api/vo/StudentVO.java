@@ -2,11 +2,13 @@ package hu.unideb.danasis.service.api.vo;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.util.List;
 
 @NoArgsConstructor
 @Data
+@ToString(exclude = "results")
 public class StudentVO {
 
     private Long id;
