@@ -11,14 +11,14 @@
     </parent>
     <artifactId>web</artifactId>
     <version>1.0</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
 
     <dependencies>
 
         <dependency>
             <groupId>hu.unideb</groupId>
-            <artifactId>service-api</artifactId>
+            <artifactId>service</artifactId>
             <version>1.0</version>
         </dependency>
 

@@ -17,7 +17,7 @@ public class StudentController {
     StudentService studentService;
 
     @CrossOrigin(origins = "*")
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/students", method = RequestMethod.GET)
     public ResponseEntity<List<StudentVO>> getAllStudents() {
 
         List<StudentVO> students = studentService.findAll();

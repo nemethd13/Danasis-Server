@@ -15,7 +15,7 @@ public class Exercise extends BaseEntity{
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "exercisesid")
-    private Exercises exercisesId;
+    private Long exercisesId;
 
     private String theme;
 

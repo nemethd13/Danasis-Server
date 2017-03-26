@@ -9,7 +9,7 @@ public class ExerciseVO {
 
     private Long id;
 
-    private ExercisesVO exercisesId;
+    private Long exercisesId;
 
     private String theme;
 
