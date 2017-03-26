@@ -1,5 +1,6 @@
 package hu.unideb.danasis.data.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,9 +14,10 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Exercise extends BaseEntity{
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(targetEntity = Exercises.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "exercisesid")
-    private Long exercisesId;
+    @JsonBackReference
+    private Exercises exercisesId;
 
     private String theme;
 

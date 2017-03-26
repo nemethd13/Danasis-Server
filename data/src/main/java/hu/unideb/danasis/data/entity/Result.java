@@ -1,5 +1,6 @@
 package hu.unideb.danasis.data.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -15,8 +16,9 @@ import java.time.LocalDateTime;
 @Entity
 public class Result extends BaseEntity {
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(targetEntity = Student.class,cascade = CascadeType.ALL)
     @JoinColumn(name = "studentid")
+    @JsonBackReference
     private Student studentId;
 
     private Long score;

@@ -3,7 +3,8 @@ package hu.unideb.danasis.data.entity;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
+import java.util.List;
 
 @NoArgsConstructor
 @Data
@@ -27,6 +28,9 @@ public class Teacher extends BaseEntity{
     private String school;
 
     private String subject;
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "teacherId", cascade = CascadeType.ALL)
+    private List<Exercises> exercises;
 
 
 }

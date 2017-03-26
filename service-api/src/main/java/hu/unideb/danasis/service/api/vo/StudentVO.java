@@ -3,6 +3,8 @@ package hu.unideb.danasis.service.api.vo;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @NoArgsConstructor
 @Data
 public class StudentVO {
@@ -24,4 +26,6 @@ public class StudentVO {
     private String city;
 
     private String school;
+
+    private List<ResultVO> results;
 }
