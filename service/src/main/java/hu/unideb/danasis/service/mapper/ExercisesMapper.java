@@ -6,15 +6,20 @@ import hu.unideb.danasis.data.entity.Student;
 import hu.unideb.danasis.service.api.vo.ExercisesVO;
 import hu.unideb.danasis.service.api.vo.StudentVO;
 import org.dozer.DozerBeanMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class ExercisesMapper {
 
-    private static DozerBeanMapper mapper = new DozerBeanMapper();
+    //private static DozerBeanMapper mapper = new DozerBeanMapper();
+    @Autowired
+    private DozerBeanMapper mapper;
 
-    public static ExercisesVO toVO(final Exercises exercises) {
+    public  ExercisesVO toVO(final Exercises exercises) {
         if(exercises == null) {
             return null;
         }
@@ -22,7 +27,7 @@ public class ExercisesMapper {
         return mapper.map(exercises, ExercisesVO.class);
     }
 
-    public static Exercises toEntity(final ExercisesVO exercisesVO) {
+    public  Exercises toEntity(final ExercisesVO exercisesVO) {
         if(exercisesVO == null) {
             return null;
         }
@@ -31,7 +36,7 @@ public class ExercisesMapper {
     }
 
 
-    public static List<ExercisesVO> toVO(List<Exercises> exercisesList){
+    public  List<ExercisesVO> toVO(List<Exercises> exercisesList){
         List<ExercisesVO> exercisesVOS = new ArrayList<>();
 
         for (Exercises exercises : exercisesList) {
@@ -40,7 +45,7 @@ public class ExercisesMapper {
         return exercisesVOS;
     }
 
-    public static List<Exercises> toEntity(List<ExercisesVO> exercisesVOs){
+    public  List<Exercises> toEntity(List<ExercisesVO> exercisesVOs){
         List<Exercises> exercisesEntities = new ArrayList<>();
 
         for (ExercisesVO exercisesVO : exercisesVOs){

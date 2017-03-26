@@ -16,12 +16,15 @@ public class StudentServiceImpl implements StudentService{
     @Autowired
     StudentRepository studentRepository;
 
+    @Autowired
+    StudentMapper studentMapper;
+
     @Override
     public List<StudentVO> findAll() {
 
         List<Student> students = null;
 
         students = studentRepository.findAll();
-        return StudentMapper.toVO(students);
+        return studentMapper.toVO(students);
     }
 }

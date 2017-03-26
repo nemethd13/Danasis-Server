@@ -29,7 +29,7 @@ public class TeacherVO {
 
     private String subject;
 
-    private List<ExercisesVO> exercises;
+//    private List<ExercisesVO> exercises;
 
 
 }

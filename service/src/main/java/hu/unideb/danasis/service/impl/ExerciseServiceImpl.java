@@ -16,13 +16,16 @@ public class ExerciseServiceImpl implements ExerciseService {
     @Autowired
     ExerciseRepository exerciseRepository;
 
+    @Autowired
+    ExerciseMapper exerciseMapper;
+
     @Override
     public List<ExerciseVO> findAll() {
         List<Exercise> exercises = null;
 
         exercises = exerciseRepository.findAll();
 
-        return ExerciseMapper.toVO(exercises);
+        return exerciseMapper.toVO(exercises);
     }
 
 //    @Override

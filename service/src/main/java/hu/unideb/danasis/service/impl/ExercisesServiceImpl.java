@@ -16,6 +16,9 @@ public class ExercisesServiceImpl implements  ExercisesService{
     @Autowired
     ExercisesRepository exercisesRepository;
 
+    @Autowired
+    ExercisesMapper exercisesMapper;
+
     @Override
     public List<ExercisesVO> findAll() {
 
@@ -23,7 +26,7 @@ public class ExercisesServiceImpl implements  ExercisesService{
 
         exercises = exercisesRepository.findAll();
 
-        return ExercisesMapper.toVO(exercises);
+        return exercisesMapper.toVO(exercises);
 
     }
 }
