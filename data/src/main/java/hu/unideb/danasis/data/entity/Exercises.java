@@ -3,12 +3,14 @@ package hu.unideb.danasis.data.entity;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.List;
 
 @NoArgsConstructor
 @Data
+@ToString(exclude = "exercises")
 @Entity
 public class Exercises extends BaseEntity{
 
