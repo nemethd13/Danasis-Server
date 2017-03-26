@@ -14,4 +14,6 @@ public class ExercisesVO {
     private TeacherVO teacherId;
 
     private List<ExerciseVO> exercises;
+
+
 }

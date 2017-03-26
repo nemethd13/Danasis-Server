@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 @Entity
 public class Result extends BaseEntity {
 
-    @ManyToOne(targetEntity = Student.class,cascade = CascadeType.ALL)
+    @ManyToOne//(targetEntity = Student.class,cascade = CascadeType.ALL)
     @JoinColumn(name = "studentid")
     @JsonBackReference
     private Student studentId;

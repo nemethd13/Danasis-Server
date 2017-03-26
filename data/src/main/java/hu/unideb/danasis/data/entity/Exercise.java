@@ -14,7 +14,7 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Exercise extends BaseEntity{
 
-    @ManyToOne(targetEntity = Exercises.class, cascade = CascadeType.ALL)
+    @ManyToOne//(targetEntity = Exercises.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "exercisesid")
     @JsonBackReference
     private Exercises exercisesId;

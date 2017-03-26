@@ -2,12 +2,14 @@ package hu.unideb.danasis.data.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.List;
 
 @NoArgsConstructor
 @Data
+@ToString(exclude="exercises")
 @Entity
 public class Teacher extends BaseEntity{
 
@@ -31,6 +33,5 @@ public class Teacher extends BaseEntity{
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "teacherId", cascade = CascadeType.ALL)
     private List<Exercises> exercises;
-
 
 }
