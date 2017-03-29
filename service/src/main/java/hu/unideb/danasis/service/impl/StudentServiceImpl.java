@@ -25,6 +25,7 @@ public class StudentServiceImpl implements StudentService{
         List<Student> students = null;
 
         students = studentRepository.findAll();
+
         return studentMapper.toVO(students);
     }
 }

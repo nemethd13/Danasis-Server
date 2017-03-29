@@ -11,7 +11,7 @@ public class ResultVO {
 
     private  Long id;
 
-    private StudentVO studentId;
+    //private StudentVO studentId;
 
     private Long score;
 

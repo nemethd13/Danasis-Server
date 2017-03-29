@@ -12,11 +12,11 @@ import java.util.List;
 @Component
 public class ExerciseMapper {
 
-    //private static DozerBeanMapper mapper = new DozerBeanMapper();
-    @Autowired
-    private DozerBeanMapper mapper;
+    private static DozerBeanMapper mapper = Mappers.dozerBeanMapper();
+//    @Autowired
+//    private DozerBeanMapper mapper;
 
-    public  ExerciseVO toVO(final Exercise exercise) {
+    public static ExerciseVO toVO(final Exercise exercise) {
         if(exercise == null) {
             return null;
         }
@@ -24,7 +24,7 @@ public class ExerciseMapper {
         return mapper.map(exercise, ExerciseVO.class);
     }
 
-    public  Exercise toEntity(final ExerciseVO exerciseVO) {
+    public static Exercise toEntity(final ExerciseVO exerciseVO) {
         if(exerciseVO == null) {
             return null;
         }
@@ -33,7 +33,7 @@ public class ExerciseMapper {
     }
 
 
-    public  List<ExerciseVO> toVO(List<Exercise> exerciseList){
+    public  static List<ExerciseVO> toVO(List<Exercise> exerciseList){
         List<ExerciseVO> exerciseVOS = new ArrayList<>();
 
         for (Exercise exercise : exerciseList) {
@@ -42,7 +42,7 @@ public class ExerciseMapper {
         return exerciseVOS;
     }
 
-    public  List<Exercise> toEntity(List<ExerciseVO> exerciseVOs){
+    public static List<Exercise> toEntity(List<ExerciseVO> exerciseVOs){
         List<Exercise> exerciseEntities = new ArrayList<>();
 
         for (ExerciseVO exerciseVO : exerciseVOs){

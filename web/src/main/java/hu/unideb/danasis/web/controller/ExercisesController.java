@@ -6,10 +6,7 @@ import hu.unideb.danasis.service.api.vo.StudentVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -33,5 +30,20 @@ public class ExercisesController {
         }
 
         return new ResponseEntity<List<ExercisesVO>>(exercises, HttpStatus.OK);
+    }
+
+    @CrossOrigin(origins = "*")
+    @RequestMapping(value = "/exercises/{id}", method = RequestMethod.GET)
+    public ResponseEntity<ExercisesVO> getAllExercises(@PathVariable("id") Long id) {
+
+        ExercisesVO exercises = exercisesService.findById(id);
+
+        System.out.println(exercises);
+
+        if( exercises == null){
+            return new ResponseEntity<ExercisesVO>(HttpStatus.NO_CONTENT);
+        }
+
+        return new ResponseEntity<ExercisesVO>(exercises, HttpStatus.OK);
     }
 }

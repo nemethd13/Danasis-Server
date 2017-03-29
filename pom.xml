@@ -22,7 +22,11 @@
     <dependencyManagement>
         <dependencies>
 
-
+            <dependency>
+                <groupId>io.craftsman</groupId>
+                <artifactId>dozer-jdk8-support</artifactId>
+                <version>1.0.3</version>
+            </dependency>
 
             <dependency>
                 <groupId>net.sf.dozer</groupId>

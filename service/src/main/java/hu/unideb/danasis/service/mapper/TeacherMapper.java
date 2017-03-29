@@ -14,13 +14,13 @@ import java.util.List;
 @Component
 public class TeacherMapper {
 
-    //private static DozerBeanMapper mapper = new DozerBeanMapper();
-    @Autowired
-    private DozerBeanMapper mapper;
+    private static DozerBeanMapper mapper = Mappers.dozerBeanMapper();
+//    @Autowired
+//    private DozerBeanMapper mapper;
 
 
 
-    public  TeacherVO toVO(final Teacher teacher) {
+    public static TeacherVO toVO(final Teacher teacher) {
         if(teacher == null) {
             return null;
         }
@@ -28,7 +28,7 @@ public class TeacherMapper {
         return mapper.map(teacher, TeacherVO.class);
     }
 
-    public  Teacher toEntity(final TeacherVO teacherVO) {
+    public static Teacher toEntity(final TeacherVO teacherVO) {
         if(teacherVO == null) {
             return null;
         }
@@ -37,7 +37,7 @@ public class TeacherMapper {
     }
 
 
-    public  List<TeacherVO> toVO(List<Teacher> teachers){
+    public static List<TeacherVO> toVO(List<Teacher> teachers){
         List<TeacherVO> teacherVOS = new ArrayList<>();
 
         for (Teacher teacher : teachers) {
@@ -46,7 +46,7 @@ public class TeacherMapper {
         return teacherVOS;
     }
 
-    public  List<Teacher> toEntity(List<TeacherVO> teacherVOs){
+    public static List<Teacher> toEntity(List<TeacherVO> teacherVOs){
         List<Teacher> teacherEntities = new ArrayList<>();
 
         for (TeacherVO teacherVO : teacherVOs){

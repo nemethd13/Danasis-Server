@@ -13,7 +13,7 @@ public class ExercisesVO {
 
     private Long id;
 
-    private TeacherVO teacherId;
+    //private TeacherVO teacherId;
 
     private List<ExerciseVO> exercises;
 

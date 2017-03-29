@@ -3,7 +3,6 @@ package hu.unideb.danasis.service.mapper;
 import hu.unideb.danasis.data.entity.Student;
 import hu.unideb.danasis.service.api.vo.StudentVO;
 import org.dozer.DozerBeanMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -13,11 +12,11 @@ import java.util.List;
 public final class StudentMapper {
 
 
-    //private static DozerBeanMapper mapper = new DozerBeanMapper();
-    @Autowired
-    private DozerBeanMapper mapper;
+    private static DozerBeanMapper mapper = Mappers.dozerBeanMapper();
+//    @Autowired
+//    private DozerBeanMapper mapper;
 
-    public  StudentVO toVO(final Student student) {
+    public static StudentVO toVO(final Student student) {
         if(student == null) {
             return null;
         }
@@ -25,7 +24,7 @@ public final class StudentMapper {
         return mapper.map(student, StudentVO.class);
     }
 
-    public  Student toEntity(final StudentVO studentVO) {
+    public static Student toEntity(final StudentVO studentVO) {
         if(studentVO == null) {
             return null;
         }
@@ -34,7 +33,7 @@ public final class StudentMapper {
     }
 
 
-    public  List<StudentVO> toVO(List<Student> students){
+    public static List<StudentVO> toVO(List<Student> students){
         List<StudentVO> studentVOs = new ArrayList<>();
 
         for (Student student : students) {
@@ -43,7 +42,7 @@ public final class StudentMapper {
         return studentVOs;
     }
 
-    public  List<Student> toEntity(List<StudentVO> studentVOs){
+    public static List<Student> toEntity(List<StudentVO> studentVOs){
         List<Student> studentEntities = new ArrayList<>();
 
         for (StudentVO studentVO : studentVOs){

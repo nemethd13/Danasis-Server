@@ -14,11 +14,11 @@ import java.util.List;
 @Component
 public class ResultMapper {
 
-    //private static DozerBeanMapper mapper = new DozerBeanMapper();
-    @Autowired
-    private DozerBeanMapper mapper;
+    private static DozerBeanMapper mapper = Mappers.dozerBeanMapper();
+//    @Autowired
+//    private DozerBeanMapper mapper;
 
-    public  ResultVO toVO(final Result result) {
+    public static ResultVO toVO(final Result result) {
         if(result == null) {
             return null;
         }
@@ -26,7 +26,7 @@ public class ResultMapper {
         return mapper.map(result, ResultVO.class);
     }
 
-    public  Result toEntity(final ResultVO resultVO) {
+    public static Result toEntity(final ResultVO resultVO) {
         if(resultVO == null) {
             return null;
         }
@@ -35,7 +35,7 @@ public class ResultMapper {
     }
 
 
-    public  List<ResultVO> toVO(List<Result> results){
+    public static List<ResultVO> toVO(List<Result> results){
         List<ResultVO> resultVOs = new ArrayList<>();
 
         for (Result result : results) {
@@ -44,7 +44,7 @@ public class ResultMapper {
         return resultVOs;
     }
 
-    public  List<Result> toEntity(List<ResultVO> resultVOs){
+    public static List<Result> toEntity(List<ResultVO> resultVOs){
         List<Result> resultEntities = new ArrayList<>();
 
         for (ResultVO resultVO : resultVOs){

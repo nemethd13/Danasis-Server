@@ -29,4 +29,12 @@ public class ExercisesServiceImpl implements  ExercisesService{
         return exercisesMapper.toVO(exercises);
 
     }
+
+    @Override
+    public ExercisesVO findById(Long id) {
+
+        Exercises exercises = exercisesRepository.findById(id);
+
+        return exercisesMapper.toVO(exercises);
+    }
 }

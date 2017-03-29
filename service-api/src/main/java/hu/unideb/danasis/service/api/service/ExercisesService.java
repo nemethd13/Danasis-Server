@@ -7,4 +7,6 @@ import java.util.List;
 public interface ExercisesService {
 
     List<ExercisesVO> findAll();
+
+    ExercisesVO findById(Long id);
 }
