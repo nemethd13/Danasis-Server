@@ -5,6 +5,7 @@ import hu.unideb.danasis.service.api.vo.ExercisesVO;
 import org.dozer.DozerBeanMapper;
 import org.springframework.stereotype.Component;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 

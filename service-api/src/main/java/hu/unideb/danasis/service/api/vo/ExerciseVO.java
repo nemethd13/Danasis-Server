@@ -3,9 +3,13 @@ package hu.unideb.danasis.service.api.vo;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 @NoArgsConstructor
 @Data
-public class ExerciseVO {
+public class ExerciseVO implements Serializable {
+
+    private static final long serialVersionUID = 8729513932256891534L;
 
     private Long id;
 

@@ -9,4 +9,9 @@ public interface TeacherService {
     List<TeacherVO> getAllTeachers();
 
     TeacherVO getTeacherById(Long id);
+
+    void saveUser(TeacherVO teacher);
+
+    TeacherVO findTeacherByName(String name);
+
 }

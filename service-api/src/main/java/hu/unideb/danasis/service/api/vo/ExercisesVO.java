@@ -4,12 +4,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.io.Serializable;
 import java.util.List;
 
 @NoArgsConstructor
 @Data
 @ToString(exclude = "exercises")
-public class ExercisesVO {
+public class ExercisesVO implements Serializable{
+
+    private static final long serialVersionUID = -3508108294876503780L;
 
     private Long id;
 

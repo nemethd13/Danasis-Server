@@ -2,6 +2,7 @@ package hu.unideb.danasis.web.controller;
 
 import hu.unideb.danasis.service.api.service.StudentService;
 import hu.unideb.danasis.service.api.vo.StudentVO;
+import hu.unideb.danasis.service.api.vo.TeacherVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,5 +32,13 @@ public class StudentController {
         return new ResponseEntity<List<StudentVO>>(students, HttpStatus.OK);
     }
 
+    @CrossOrigin(origins = "*")
+    @RequestMapping(value = "/students/registration", method = RequestMethod.POST)
+    public void saveUser(@RequestBody StudentVO student) {
+
+        studentService.saveStudent(student);
+
+
+    }
 
 }

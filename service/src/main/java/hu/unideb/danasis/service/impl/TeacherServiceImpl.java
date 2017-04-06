@@ -6,6 +6,7 @@ import hu.unideb.danasis.service.api.service.TeacherService;
 import hu.unideb.danasis.service.api.vo.TeacherVO;
 import hu.unideb.danasis.service.mapper.TeacherMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,6 +19,9 @@ public class TeacherServiceImpl implements TeacherService{
 
     @Autowired
     TeacherMapper teacherMapper;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Override
     public List<TeacherVO> getAllTeachers() {
@@ -33,6 +37,25 @@ public class TeacherServiceImpl implements TeacherService{
         Teacher teacher = null;
 
         teacher = teacherRepository.findOne(id);
+
+        return teacherMapper.toVO(teacher);
+    }
+
+    @Override
+    public void saveUser(TeacherVO teacher) {
+        Teacher teacherEntity = null;
+
+        teacherEntity = teacherMapper.toEntity(teacher);
+
+        teacherEntity.setPassword(passwordEncoder.encode(teacher.getPassword()));
+        teacherRepository.save(teacherEntity);
+    }
+
+    @Override
+    public TeacherVO findTeacherByName(String name) {
+        Teacher teacher = null;
+
+        teacher = teacherRepository.findByUserName(name);
 
         return teacherMapper.toVO(teacher);
     }

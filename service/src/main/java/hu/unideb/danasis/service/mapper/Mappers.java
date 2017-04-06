@@ -10,18 +10,18 @@ public final class Mappers {
 
     private static DozerBeanMapper dozerBeanMapper ;
 
-//    static {
-//
-//
-//        List<String> mappingFiles =  new ArrayList<>();
-//
-//        mappingFiles.add("dozerJdk8Converters.xml");
-//
-//        dozerBeanMapper = new DozerBeanMapper();
-//
-//        dozerBeanMapper.setMappingFiles(mappingFiles);
-//
-//    }
+    static {
+
+
+        List<String> mappingFiles =  new ArrayList<>();
+
+        mappingFiles.add("dozerJdk8Converters.xml");
+
+        dozerBeanMapper = new DozerBeanMapper();
+
+        dozerBeanMapper.setMappingFiles(mappingFiles);
+
+    }
 
     private Mappers(){}
 

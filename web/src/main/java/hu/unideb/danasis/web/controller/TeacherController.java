@@ -46,4 +46,17 @@ public class TeacherController {
 
         return new ResponseEntity<TeacherVO>(teacher, HttpStatus.OK);
     }
+
+    @CrossOrigin(origins = "*")
+    @RequestMapping(value = "/teachers/registration", method = RequestMethod.POST)
+    public void saveUser(@RequestBody TeacherVO teacher) {
+
+        teacherService.saveUser(teacher);
+
+
+    }
+
+
+
+
 }

@@ -5,11 +5,12 @@ import hu.unideb.danasis.service.api.vo.StudentVO;
 import org.dozer.DozerBeanMapper;
 import org.springframework.stereotype.Component;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public final class StudentMapper {
+public final class StudentMapper  {
 
 
     private static DozerBeanMapper mapper = Mappers.dozerBeanMapper();
