@@ -19,6 +19,8 @@ public class Exercises extends BaseEntity{
     @JsonBackReference
     private Teacher teacherId;
 
+    private String exercisesTheme;
+
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "exercisesId", cascade = CascadeType.ALL)
     List<Exercise> exercises;
 

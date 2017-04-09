@@ -56,6 +56,16 @@ public class TeacherController {
 
     }
 
+    @CrossOrigin(origins = "*")
+    @RequestMapping(value = "/teachers/{id}/exercises", method = RequestMethod.POST)
+    public void getTeacherById(@PathVariable("id") Long id, @RequestBody ExercisesVO exercises) {
+
+        teacherService.updateTeacher(id, exercises);
+
+    }
+
+
+
 
 
 

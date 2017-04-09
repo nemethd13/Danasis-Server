@@ -14,6 +14,9 @@ public class ResultVO implements Serializable{
     private  Long id;
 
     //private StudentVO studentId;
+    private String exercisesTheme;
+
+    private Long allQuestion;
 
     private Long score;
 

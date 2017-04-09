@@ -21,6 +21,10 @@ public class Result extends BaseEntity {
     @JsonBackReference
     private Student studentId;
 
+    private String exercisesTheme;
+
+    private Long allQuestion;
+
     private Long score;
 
     private LocalDateTime date;

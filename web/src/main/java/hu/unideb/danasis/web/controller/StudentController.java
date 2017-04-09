@@ -1,6 +1,7 @@
 package hu.unideb.danasis.web.controller;
 
 import hu.unideb.danasis.service.api.service.StudentService;
+import hu.unideb.danasis.service.api.vo.ResultVO;
 import hu.unideb.danasis.service.api.vo.StudentVO;
 import hu.unideb.danasis.service.api.vo.TeacherVO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,4 +42,16 @@ public class StudentController {
 
     }
 
+    @CrossOrigin(origins = "*")
+    @RequestMapping(value = "/students/{id}/results", method = RequestMethod.GET)
+    public ResponseEntity<List<ResultVO>> getResultsByStudentId(@PathVariable("id") Long id) {
+
+        List<ResultVO> results = studentService.findById(id).getResults();
+
+        if( results == null){
+            return new ResponseEntity<List<ResultVO>>(HttpStatus.NO_CONTENT);
+        }
+
+        return new ResponseEntity<List<ResultVO>>(results, HttpStatus.OK);
+    }
 }

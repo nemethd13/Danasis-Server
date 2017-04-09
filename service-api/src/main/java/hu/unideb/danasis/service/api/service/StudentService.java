@@ -11,5 +11,7 @@ public interface StudentService {
 
     StudentVO findStudentByName(String name);
 
+    StudentVO findById(Long id);
+
     void saveStudent(StudentVO student);
 }

@@ -9,4 +9,6 @@ public interface ExercisesService {
     List<ExercisesVO> findAll();
 
     ExercisesVO findById(Long id);
+
+//    List<ExercisesVO> findByTeacherId(Long id);
 }

@@ -37,4 +37,14 @@ public class ExercisesServiceImpl implements  ExercisesService{
 
         return exercisesMapper.toVO(exercises);
     }
+//
+//    @Override
+//    public List<ExercisesVO> findByTeacherId(Long id) {
+//
+//        List<Exercises> exercisesEntity = null;
+//        exercisesEntity = exercisesRepository.findByTeacherId(id);
+//        return exercisesMapper.toVO(exercisesEntity);
+//
+//
+//    }
 }

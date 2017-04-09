@@ -16,6 +16,8 @@ public class ExercisesVO implements Serializable{
 
     private Long id;
 
+    private String exercisesTheme;
+
     //private TeacherVO teacherId;
 
     private List<ExerciseVO> exercises;

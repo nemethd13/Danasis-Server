@@ -1,8 +1,10 @@
 package hu.unideb.danasis.web.controller;
 
 import hu.unideb.danasis.service.api.service.ExercisesService;
+import hu.unideb.danasis.service.api.service.TeacherService;
 import hu.unideb.danasis.service.api.vo.ExercisesVO;
 import hu.unideb.danasis.service.api.vo.StudentVO;
+import hu.unideb.danasis.service.api.vo.TeacherVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +18,9 @@ public class ExercisesController {
 
     @Autowired
     ExercisesService exercisesService;
+
+    @Autowired
+    TeacherService teacherService;
 
     @CrossOrigin(origins = "*")
     @RequestMapping(value = "/exercises", method = RequestMethod.GET)
@@ -34,16 +39,27 @@ public class ExercisesController {
 
     @CrossOrigin(origins = "*")
     @RequestMapping(value = "/exercises/{id}", method = RequestMethod.GET)
-    public ResponseEntity<ExercisesVO> getAllExercises(@PathVariable("id") Long id) {
+    public ResponseEntity<List<ExercisesVO>> getExercisesByTeacherId(@PathVariable("id") Long id) {
 
-        ExercisesVO exercises = exercisesService.findById(id);
+        TeacherVO teacherVO = teacherService.getTeacherById(id);
+
+        List<ExercisesVO> exercises = teacherVO.getExercises();
 
         System.out.println(exercises);
 
         if( exercises == null){
-            return new ResponseEntity<ExercisesVO>(HttpStatus.NO_CONTENT);
+            return new ResponseEntity<List<ExercisesVO>>(HttpStatus.NO_CONTENT);
         }
 
-        return new ResponseEntity<ExercisesVO>(exercises, HttpStatus.OK);
+        return new ResponseEntity<List<ExercisesVO>>(exercises, HttpStatus.OK);
     }
+
+//    @CrossOrigin(origins = "*")
+//    @RequestMapping(value = "/exercises", method = RequestMethod.POST)
+//    public void saveUser(@RequestBody StudentVO student) {
+//
+//        studentService.saveStudent(student);
+//
+//
+//    }
 }
