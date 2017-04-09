@@ -14,7 +14,7 @@ import java.util.List;
 @Entity
 public class Exercises extends BaseEntity{
 
-    @ManyToOne//(targetEntity = Teacher.class,cascade = CascadeType.ALL)
+    @ManyToOne(targetEntity = Teacher.class,cascade = CascadeType.ALL)
     @JoinColumn(name = "teacherid")
     @JsonBackReference
     private Teacher teacherId;
@@ -22,7 +22,7 @@ public class Exercises extends BaseEntity{
     private String exercisesTheme;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "exercisesId", cascade = CascadeType.ALL)
-    List<Exercise> exercises;
+    List<Exercise> exercisesList;
 
 
 

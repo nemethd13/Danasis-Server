@@ -50,6 +50,7 @@ public class HibernateConfiguration {
     private Properties additionalProperties() {
         Properties properties = new Properties();
         properties.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
+        properties.setProperty("hibernate.showSql", "true");
         return properties;
     }
 

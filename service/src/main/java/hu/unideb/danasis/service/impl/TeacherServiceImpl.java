@@ -83,7 +83,7 @@ public class TeacherServiceImpl implements TeacherService{
 
         Exercises newExercises = exercisesMapper.toEntity(exercises);
 
-        List<Exercise> exerciseList = newExercises.getExercises();
+        List<Exercise> exerciseList = newExercises.getExercisesList();
 
         for (Exercise e : exerciseList) {
             e.setExercisesId(newExercises);

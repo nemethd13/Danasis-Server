@@ -40,10 +40,10 @@ public class ExercisesController {
     @CrossOrigin(origins = "*")
     @RequestMapping(value = "/exercises/{id}", method = RequestMethod.GET)
     public ResponseEntity<List<ExercisesVO>> getExercisesByTeacherId(@PathVariable("id") Long id) {
+//
+//        TeacherVO teacherVO = teacherService.getTeacherById(id);
 
-        TeacherVO teacherVO = teacherService.getTeacherById(id);
-
-        List<ExercisesVO> exercises = teacherVO.getExercises();
+        List<ExercisesVO> exercises = exercisesService.findByTeacherId(id);
 
         System.out.println(exercises);
 

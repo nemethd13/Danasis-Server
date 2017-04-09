@@ -10,5 +10,5 @@ public interface ExercisesService {
 
     ExercisesVO findById(Long id);
 
-//    List<ExercisesVO> findByTeacherId(Long id);
+    List<ExercisesVO> findByTeacherId(Long id);
 }

@@ -20,7 +20,7 @@ public class ExercisesVO implements Serializable{
 
     //private TeacherVO teacherId;
 
-    private List<ExerciseVO> exercises;
+    private List<ExerciseVO> exercisesList;
 
 
 }
