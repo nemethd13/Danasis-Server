@@ -12,4 +12,6 @@ public interface ExercisesService {
     ExercisesVO findById(Long id);
 
     List<ExercisesVO> findByTeacherId(TeacherVO teacherId);
+
+    //void deleteExercises(ExercisesVO exercisesVO);
 }

@@ -31,7 +31,7 @@ public class Teacher extends BaseEntity{
 
     private String subject;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "teacherId", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "teacherId", cascade = CascadeType.ALL, orphanRemoval=true)
     private List<Exercises> exercises;
 
 }

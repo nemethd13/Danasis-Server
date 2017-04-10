@@ -57,4 +57,12 @@ public class ExercisesServiceImpl implements  ExercisesService{
 
 
     }
+
+//    @Override
+//    public void deleteExercises(ExercisesVO exercisesVO) {
+//
+//        Exercises exercises = exercisesRepository.findById(exercisesVO.getId());
+//
+//        exercisesRepository.delete(exercises);
+//    }
 }

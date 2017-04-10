@@ -54,4 +54,18 @@ public class ExercisesController {
         return new ResponseEntity<List<ExercisesVO>>(exercises, HttpStatus.OK);
     }
 
+//    @CrossOrigin(origins = "*")
+//    @RequestMapping(value = "/exercises/delete/{id}", method = RequestMethod.POST)
+//    public void deleteExerciseById(@PathVariable("id") Long id) {
+//
+//        ExercisesVO exercisesVO = exercisesService.findById(id);
+//
+//        System.out.println("Torlendo" + exercisesVO);
+//
+//        exercisesService.deleteExercises(exercisesVO);
+//
+//        System.out.println("Torolve" + exercisesVO);
+//    }
+
+
 }

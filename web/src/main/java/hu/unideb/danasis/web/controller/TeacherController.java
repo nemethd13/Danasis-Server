@@ -63,6 +63,15 @@ public class TeacherController {
 
     }
 
+    @CrossOrigin(origins = "*")
+    @RequestMapping(value = "/teachers/{teacherId}/exercises/{exercisesId}", method = RequestMethod.POST)
+    public void updateTeacherDeleteExercises(@PathVariable("teacherId") Long teacherId, @PathVariable("exercisesId") Long exercisesId) {
+
+        teacherService.updateTeacherDeleteExercises(teacherId,exercisesId);
+
+
+    }
+
 
 
 

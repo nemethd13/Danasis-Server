@@ -97,4 +97,40 @@ public class TeacherServiceImpl implements TeacherService{
 
         teacherRepository.save(teacher);
     }
+
+    @Override
+    public void updateTeacherDeleteExercises(Long teacherId, Long exercisesId) {
+
+        Teacher teacher = teacherRepository.findOne(teacherId);
+
+        List<Exercises> exercisesList = teacher.getExercises();
+
+        System.out.println("Ez az id kene " + exercisesId);
+
+        System.out.println();
+
+        for (Exercises e : exercisesList) {
+            System.out.println(e.getId());
+        }
+
+            for(int i = 0; i < exercisesList.size(); i++) {
+                System.out.println("ciklusba vagyunk");
+                System.out.println("Ezt torolnenk: " + exercisesId + "Ez van most iteracioban" + exercisesList.get(i).getId());
+                if(exercisesId.equals(exercisesList.get(i).getId())){
+
+                    System.out.println("Torlendo feladatsor: " + exercisesList.get(i));
+                    exercisesList.remove(i);
+
+                }
+            }
+
+        for (Exercises e : exercisesList) {
+            System.out.println(e.getId());
+        }
+
+
+        teacher.setExercises(exercisesList);
+
+        teacherRepository.save(teacher);
+    }
 }
