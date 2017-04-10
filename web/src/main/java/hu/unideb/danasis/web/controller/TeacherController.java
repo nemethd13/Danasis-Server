@@ -38,8 +38,6 @@ public class TeacherController {
 
         TeacherVO teacher = teacherService.getTeacherById(id);
 
-
-
         if( teacher == null){
             return new ResponseEntity<TeacherVO>(HttpStatus.NO_CONTENT);
         }
@@ -58,9 +56,10 @@ public class TeacherController {
 
     @CrossOrigin(origins = "*")
     @RequestMapping(value = "/teachers/{id}/exercises", method = RequestMethod.POST)
-    public void getTeacherById(@PathVariable("id") Long id, @RequestBody ExercisesVO exercises) {
+    public void updateTeacherExercises(@PathVariable("id") Long id, @RequestBody ExercisesVO exercises) {
 
         teacherService.updateTeacher(id, exercises);
+        System.out.println("fasz" + exercises);
 
     }
 

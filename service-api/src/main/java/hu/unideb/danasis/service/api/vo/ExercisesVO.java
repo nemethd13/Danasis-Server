@@ -9,7 +9,7 @@ import java.util.List;
 
 @NoArgsConstructor
 @Data
-@ToString(exclude = "exercises")
+@ToString(exclude = "exercisesList")
 public class ExercisesVO implements Serializable{
 
     private static final long serialVersionUID = -3508108294876503780L;

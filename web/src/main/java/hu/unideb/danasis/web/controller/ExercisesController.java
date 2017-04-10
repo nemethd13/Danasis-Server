@@ -40,10 +40,10 @@ public class ExercisesController {
     @CrossOrigin(origins = "*")
     @RequestMapping(value = "/exercises/{id}", method = RequestMethod.GET)
     public ResponseEntity<List<ExercisesVO>> getExercisesByTeacherId(@PathVariable("id") Long id) {
-//
-//        TeacherVO teacherVO = teacherService.getTeacherById(id);
 
-        List<ExercisesVO> exercises = exercisesService.findByTeacherId(id);
+        TeacherVO teacherVO = teacherService.getTeacherById(id);
+
+        List<ExercisesVO> exercises = exercisesService.findByTeacherId(teacherVO);
 
         System.out.println(exercises);
 
@@ -54,12 +54,4 @@ public class ExercisesController {
         return new ResponseEntity<List<ExercisesVO>>(exercises, HttpStatus.OK);
     }
 
-//    @CrossOrigin(origins = "*")
-//    @RequestMapping(value = "/exercises", method = RequestMethod.POST)
-//    public void saveUser(@RequestBody StudentVO student) {
-//
-//        studentService.saveStudent(student);
-//
-//
-//    }
 }

@@ -24,7 +24,7 @@ public class LogInController {
     public ResponseEntity<User> findUser(@RequestParam("param") String username) {//, @RequestParam("param2") String password) {
 
 
-        TeacherVO teacher = new TeacherVO();
+        TeacherVO teacher = null;
         teacher = teacherService.findTeacherByName(username);
 
         StudentVO student = null;

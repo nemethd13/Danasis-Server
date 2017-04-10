@@ -1,0 +1,74 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building web 1.0
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] >>> jetty-maven-plugin:9.4.2.v20170220:run (default-cli) > test-compile @ web >>>
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ web ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /Users/nemethdaniel/Documents/Szakdolgozat/server/web/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.1:compile (default-compile) @ web ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ web ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /Users/nemethdaniel/Documents/Szakdolgozat/server/web/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.1:testCompile (default-testCompile) @ web ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] <<< jetty-maven-plugin:9.4.2.v20170220:run (default-cli) < test-compile @ web <<<
+[INFO] 
+[INFO] --- jetty-maven-plugin:9.4.2.v20170220:run (default-cli) @ web ---
+[INFO] Logging initialized @3955ms to org.eclipse.jetty.util.log.Slf4jLog
+[INFO] Configuring Jetty for project: web
+[INFO] webAppSourceDirectory not set. Trying src/main/webapp
+[INFO] webAppSourceDirectory /Users/nemethdaniel/Documents/Szakdolgozat/server/web/src/main/webapp does not exist. Trying /Users/nemethdaniel/Documents/Szakdolgozat/server/web/target/webapp-tmp
+[INFO] Reload Mechanic: automatic
+[INFO] Classes = /Users/nemethdaniel/Documents/Szakdolgozat/server/web/target/classes
+[INFO] Context path = /danasis
+[INFO] Tmp directory = /Users/nemethdaniel/Documents/Szakdolgozat/server/web/target/tmp
+[INFO] Web defaults = org/eclipse/jetty/webapp/webdefault.xml
+[INFO] Web overrides =  none
+[INFO] web.xml file = null
+[INFO] Webapp directory = /Users/nemethdaniel/Documents/Szakdolgozat/server/web/target/webapp-tmp
+[INFO] jetty-9.4.2.v20170220
+[INFO] Scanning elapsed time=2496ms
+[INFO] 2 Spring WebApplicationInitializers detected on classpath
+[INFO] DefaultSessionIdManager workerName=node0
+[INFO] No SessionScavenger set, using defaults
+[INFO] Scavenging every 660000ms
+[INFO] Initializing Spring root WebApplicationContext
+[INFO] Initializing Spring FrameworkServlet 'dispatcher'
+[INFO] Started o.e.j.m.p.JettyWebAppContext@7fc645e4{/danasis,file:///Users/nemethdaniel/Documents/Szakdolgozat/server/web/target/webapp-tmp/,AVAILABLE}{file:///Users/nemethdaniel/Documents/Szakdolgozat/server/web/target/webapp-tmp/}
+[INFO] Started ServerConnector@594c66c3{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+[INFO] Started @15114ms
+[INFO] Started Jetty Server
+[INFO] Using Non-Native Java sun.nio.fs.PollingWatchService
+[WARNING] Quiet Time is too low for non-native WatchService [sun.nio.fs.PollingWatchService]: 1000 < 5000 ms (defaulting to 5000 ms)
+nemethd13 admin [ROLE_ADMIN]
+AUTHORITIES: [ROLE_ADMIN]
+[ExercisesVO(id=22, exercisesTheme=sport), ExercisesVO(id=23, exercisesTheme=sport), ExercisesVO(id=24, exercisesTheme=tanc), ExercisesVO(id=25, exercisesTheme=barokk), ExercisesVO(id=26, exercisesTheme=faszsag), ExercisesVO(id=27, exercisesTheme=vmi)]
+nemethd13 admin [ROLE_ADMIN]
+AUTHORITIES: [ROLE_ADMIN]
+loglog[Exercises(teacherId=Teacher(userName=nemethd13, firstName=Nemeth, lastName=Daniel, email=nemethd13@vmi.com, password=$2a$10$ELKBdHyHPCVKlYNYUHm4m.sDiqjsLJu6fjl1Nn6B403F3ZjIG6.I2, role=admin, city=Ibrany, school=Kolcsey Ferenc Gimmnazium, subject=Matematika), exercisesTheme=sport), Exercises(teacherId=Teacher(userName=nemethd13, firstName=Nemeth, lastName=Daniel, email=nemethd13@vmi.com, password=$2a$10$ELKBdHyHPCVKlYNYUHm4m.sDiqjsLJu6fjl1Nn6B403F3ZjIG6.I2, role=admin, city=Ibrany, school=Kolcsey Ferenc Gimmnazium, subject=Matematika), exercisesTheme=sport), Exercises(teacherId=Teacher(userName=nemethd13, firstName=Nemeth, lastName=Daniel, email=nemethd13@vmi.com, password=$2a$10$ELKBdHyHPCVKlYNYUHm4m.sDiqjsLJu6fjl1Nn6B403F3ZjIG6.I2, role=admin, city=Ibrany, school=Kolcsey Ferenc Gimmnazium, subject=Matematika), exercisesTheme=tanc), Exercises(teacherId=Teacher(userName=nemethd13, firstName=Nemeth, lastName=Daniel, email=nemethd13@vmi.com, password=$2a$10$ELKBdHyHPCVKlYNYUHm4m.sDiqjsLJu6fjl1Nn6B403F3ZjIG6.I2, role=admin, city=Ibrany, school=Kolcsey Ferenc Gimmnazium, subject=Matematika), exercisesTheme=barokk), Exercises(teacherId=Teacher(userName=nemethd13, firstName=Nemeth, lastName=Daniel, email=nemethd13@vmi.com, password=$2a$10$ELKBdHyHPCVKlYNYUHm4m.sDiqjsLJu6fjl1Nn6B403F3ZjIG6.I2, role=admin, city=Ibrany, school=Kolcsey Ferenc Gimmnazium, subject=Matematika), exercisesTheme=faszsag), Exercises(teacherId=Teacher(userName=nemethd13, firstName=Nemeth, lastName=Daniel, email=nemethd13@vmi.com, password=$2a$10$ELKBdHyHPCVKlYNYUHm4m.sDiqjsLJu6fjl1Nn6B403F3ZjIG6.I2, role=admin, city=Ibrany, school=Kolcsey Ferenc Gimmnazium, subject=Matematika), exercisesTheme=vmi), Exercises(teacherId=Teacher(userName=nemethd13, firstName=Nemeth, lastName=Daniel, email=nemethd13@vmi.com, password=$2a$10$ELKBdHyHPCVKlYNYUHm4m.sDiqjsLJu6fjl1Nn6B403F3ZjIG6.I2, role=admin, city=Ibrany, school=Kolcsey Ferenc Gimmnazium, subject=Matematika), exercisesTheme=ppppp)]
+faszExercisesVO(id=null, exercisesTheme=ppppp)
+nemethd13 admin [ROLE_ADMIN]
+AUTHORITIES: [ROLE_ADMIN]
+[ExercisesVO(id=22, exercisesTheme=sport), ExercisesVO(id=23, exercisesTheme=sport), ExercisesVO(id=24, exercisesTheme=tanc), ExercisesVO(id=25, exercisesTheme=barokk), ExercisesVO(id=26, exercisesTheme=faszsag), ExercisesVO(id=27, exercisesTheme=vmi), ExercisesVO(id=28, exercisesTheme=ppppp)]
+[INFO] Stopped ServerConnector@594c66c3{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+[INFO] Stopped scavenging
+[INFO] Destroying Spring FrameworkServlet 'dispatcher'
+[INFO] Closing Spring root WebApplicationContext
+[INFO] Stopped o.e.j.m.p.JettyWebAppContext@7fc645e4{/danasis,file:///Users/nemethdaniel/Documents/Szakdolgozat/server/web/target/webapp-tmp/,UNAVAILABLE}{file:///Users/nemethdaniel/Documents/Szakdolgozat/server/web/target/webapp-tmp/}
+[INFO] Jetty server exiting.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 21:13 min
+[INFO] Finished at: 2017-04-10T12:55:25+02:00
+[INFO] Final Memory: 36M/643M
+[INFO] ------------------------------------------------------------------------

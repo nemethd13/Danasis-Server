@@ -10,7 +10,7 @@ import java.util.List;
 
 @NoArgsConstructor
 @Data
-@ToString(exclude = "exercises")
+@ToString(exclude = "exercisesList")
 @Entity
 public class Exercises extends BaseEntity{
 

@@ -15,8 +15,6 @@ public interface TeacherService {
 
     TeacherVO findTeacherByName(String name);
 
-    void deleteTeacher(Long id);
-
     void updateTeacher(Long id, ExercisesVO exercises);
 
 }

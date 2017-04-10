@@ -67,10 +67,6 @@ public class TeacherServiceImpl implements TeacherService{
         return teacherMapper.toVO(teacher);
     }
 
-    @Override
-    public void deleteTeacher(Long id) {
-        teacherRepository.delete(id);
-    }
 
     @Override
     public void updateTeacher(Long id, ExercisesVO exercises) {
@@ -85,8 +81,10 @@ public class TeacherServiceImpl implements TeacherService{
 
         List<Exercise> exerciseList = newExercises.getExercisesList();
 
-        for (Exercise e : exerciseList) {
-            e.setExercisesId(newExercises);
+        if(exerciseList != null) {
+            for (Exercise e : exerciseList) {
+                e.setExercisesId(newExercises);
+            }
         }
 
         newExercises.setTeacherId(teacher);
@@ -94,6 +92,8 @@ public class TeacherServiceImpl implements TeacherService{
         exercisesList.add(newExercises);
 
         teacher.setExercises(exercisesList);
+
+        System.out.println("loglog" + teacher.getExercises());
 
         teacherRepository.save(teacher);
     }

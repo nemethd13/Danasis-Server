@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface ExerciseRepository extends JpaRepository<Exercise, Long> {
 
-//    @Query("select * from Exercise e where(e.exe)")
+
 //    List<Exercise> findByExercisesid(String exercisesid);
 
 

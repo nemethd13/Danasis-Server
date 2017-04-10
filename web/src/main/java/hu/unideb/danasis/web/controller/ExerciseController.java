@@ -29,16 +29,4 @@ public class ExerciseController {
         return new ResponseEntity<List<ExerciseVO>>(exercises, HttpStatus.OK);
     }
 
-//    @CrossOrigin(origins = "*")
-//    @RequestMapping(value = "exercise/{exercisesId}", method = RequestMethod.GET)
-//    public ResponseEntity<List<ExerciseVO>> getExercisesById(@PathVariable("exercisesId") String exercisesId) {
-//
-//        List<ExerciseVO> exercises = exerciseService.findByExercisesId(exercisesId);
-//
-//        if( exercises == null){
-//            return new ResponseEntity<List<ExerciseVO>>(HttpStatus.NO_CONTENT);
-//        }
-//
-//        return new ResponseEntity<List<ExerciseVO>>(exercises, HttpStatus.OK);
-//    }
 }
