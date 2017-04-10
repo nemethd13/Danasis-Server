@@ -39,6 +39,21 @@ public class ExercisesController {
 
     @CrossOrigin(origins = "*")
     @RequestMapping(value = "/exercises/{id}", method = RequestMethod.GET)
+    public ResponseEntity<ExercisesVO> getExercisesById(@PathVariable("id") Long id) {
+
+        ExercisesVO exercises = exercisesService.findById(id);
+
+        System.out.println(exercises);
+
+        if( exercises == null){
+            return new ResponseEntity<ExercisesVO>(HttpStatus.NO_CONTENT);
+        }
+
+        return new ResponseEntity<ExercisesVO>(exercises, HttpStatus.OK);
+    }
+
+    @CrossOrigin(origins = "*")
+    @RequestMapping(value = "/exercises/teachers/{id}", method = RequestMethod.GET)
     public ResponseEntity<List<ExercisesVO>> getExercisesByTeacherId(@PathVariable("id") Long id) {
 
         TeacherVO teacherVO = teacherService.getTeacherById(id);

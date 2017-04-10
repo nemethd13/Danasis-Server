@@ -4,11 +4,9 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-
 import java.time.LocalDateTime;
 
 @NoArgsConstructor
@@ -27,5 +25,6 @@ public class Result extends BaseEntity {
 
     private Long score;
 
+    //@JsonSerialize(using = LocalDateTimeSerializer.class)
     private LocalDateTime date;
 }

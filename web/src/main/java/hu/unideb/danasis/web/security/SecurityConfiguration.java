@@ -28,6 +28,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
         http.csrf().disable()
                 .authorizeRequests()
+                .antMatchers("/students/registration").permitAll()
+                .antMatchers("/teachers/registration").permitAll()
                 .antMatchers("/**").hasAnyRole("USER","ADMIN")
                 .and().httpBasic()
                 .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);

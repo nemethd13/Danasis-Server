@@ -6,6 +6,7 @@ import hu.unideb.danasis.data.repository.StudentRepository;
 import hu.unideb.danasis.service.api.service.StudentService;
 import hu.unideb.danasis.service.api.vo.ResultVO;
 import hu.unideb.danasis.service.api.vo.StudentVO;
+import hu.unideb.danasis.service.mapper.ResultMapper;
 import hu.unideb.danasis.service.mapper.StudentMapper;
 import javafx.util.converter.LocalDateTimeStringConverter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,9 @@ public class StudentServiceImpl implements StudentService{
 
     @Autowired
     StudentMapper studentMapper;
+
+    @Autowired
+    ResultMapper resultMapper;
 
     DateTimeFormatter format;
 
@@ -72,24 +76,43 @@ public class StudentServiceImpl implements StudentService{
 
         student = studentRepository.findOne(id);
 
-        List<Result> results = student.getResults();
+//        List<Result> results = student.getResults();
+//
+//        System.out.println("Elotte");
+//        for (Result result : results){
+//            System.out.println(result.getDate());
+//        }
+//
+//        for(Result result : results) {
+//            result.getDate().format(format);
+//        }
+//
+//        System.out.println("Utana");
+//        for (Result result : results){
+//            System.out.println(result.getDate());
+//        }
 
-        System.out.println("Elotte");
-        for (Result result : results){
-            System.out.println(result.getDate());
-        }
-
-        for(Result result : results) {
-            result.getDate().format(format);
-        }
-
-        System.out.println("Utana");
-        for (Result result : results){
-            System.out.println(result.getDate());
-        }
-
-        student.setResults(results);
+        //student.setResults(results);
 
         return studentMapper.toVO(student);
+    }
+
+    @Override
+    public void updateStudentWithResult(Long id, ResultVO resultVO) {
+
+        Student student = studentRepository.findOne(id);
+
+        List<Result> resultList = student.getResults();
+
+        Result newResult = resultMapper.toEntity(resultVO);
+
+        newResult.setStudentId(student);
+
+        resultList.add(newResult);
+
+        student.setResults(resultList);
+
+        studentRepository.save(student);
+
     }
 }

@@ -54,4 +54,12 @@ public class StudentController {
 
         return new ResponseEntity<List<ResultVO>>(results, HttpStatus.OK);
     }
+
+    @CrossOrigin(origins = "*")
+    @RequestMapping(value = "/students/{id}/results/vmi", method = RequestMethod.POST)
+    public void updateStudentWithResult(@PathVariable("id") Long id, @RequestBody ResultVO resultVO) {
+
+        studentService.updateStudentWithResult(id,resultVO);
+        System.out.println("Beleptem a result mentesbe");
+    }
 }

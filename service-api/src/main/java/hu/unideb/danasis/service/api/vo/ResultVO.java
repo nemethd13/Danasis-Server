@@ -11,15 +11,18 @@ import java.time.LocalDateTime;
 public class ResultVO implements Serializable{
 
     private static final long serialVersionUID = -5454792906786220779L;
+
     private  Long id;
 
     //private StudentVO studentId;
+
     private String exercisesTheme;
 
     private Long allQuestion;
 
     private Long score;
 
+//    @JsonSerialize(using = LocalDateTimeSerializer.class)
     private LocalDateTime date;
 
 }
